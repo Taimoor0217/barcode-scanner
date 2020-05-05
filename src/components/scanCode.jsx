@@ -9,10 +9,9 @@ export default function Landing() {
   let history = useHistory();
   const [camera, setCamera] = useState(true);
   const [result, setResult] = useState(null);
-  const [message , setMessage] = useState("")
+  const [message , setMessage] = useState("Hello World")
   const [isSaving, setSaving] = useState(false);
-  const [status , setStatus] = useState(true);
-  let res = true;
+  const [status , setStatus] = useState(false); //completed processing?
   const onDetected = result => {
     setResult(result);
   };
@@ -26,15 +25,35 @@ export default function Landing() {
     setMessage("Saving data to the database...")
     // SEND API CALLL
     //.THEN
-    if(res){
-      setMessage("Product saved successfully database...")
-    }
+    // setStatus(true) //after api returns something
+    // setMessage("Saved Successfully") //set the messgae to the response message
 
   }
   if(isSaving){
-    return(
-    <h2> {message}</h2>
-    )
+
+    if (status){
+      return(
+        <Segment>
+          <h2> {message}</h2>
+            <div className="button-button">
+                <Button onClick={()=>{
+                  // history.push('/scan')
+                  setSaving(false)
+                  setStatus(false)
+                  setMessage("")
+                }} inverted color= "green"> Scan Another</Button>
+                <Button onClick={()=>history.push('/add')} inverted color = "yellow"> Add Product</Button>
+            </div>
+          </Segment>
+      )
+    }else{
+      return(
+        <Segment>
+          <h2>  {message} </h2>
+        </Segment>
+      )
+    }
+    // set status to false 
   }
   return (
     <>
