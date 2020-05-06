@@ -9,6 +9,7 @@
   min-width: 350px;
 }
 .holder{
+  margin: 18px;
   display: flex;
   justify-content: center;
 }

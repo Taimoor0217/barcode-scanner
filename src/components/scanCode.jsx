@@ -18,12 +18,12 @@ export default function Landing() {
   function sendToken(){
     Api.sendToken(result)
     .then(res=>{
-      console.log(res.data)
+      // console.log(res.data)
       setMessage("Sucessfully Saved to Database")
       setStatus(true)
     })
     .catch(err=>{
-      console.log(err.message)
+      // console.log(err.message)
       setMessage(err.response.data)
       setStatus(true)
     })
@@ -69,7 +69,6 @@ export default function Landing() {
        Save
       </Button>
       <Button onClick={()=>history.push('/add')} inverted color = "yellow"> Add Manually</Button>
-
     </Segment>
     </>
   );
