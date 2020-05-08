@@ -12,7 +12,7 @@ export default function Landing() {
   const [isSaving, setSaving] = useState(false);
   const [status , setStatus] = useState(false); //completed processing?
   const onDetected = result => {
-    setResult(result);
+    setResult(result.codeResult.result);
   };
   
   function sendToken(){

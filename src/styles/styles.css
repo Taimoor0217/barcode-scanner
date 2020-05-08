@@ -4,14 +4,14 @@
 
 .container,
 #interactive.viewport {
-  width: 400px;
-  height: 300px;
+  width: 640px;
+  height: 480px;
 }
 
 #interactive.viewport canvas,
 video {
-  width: 330px;
-  height: 300px;
+  width: 640px;
+  height: 480px;
   position: absolute;
   top: 0;
   left: 0;
@@ -19,6 +19,6 @@ video {
 
 #interactive.viewport canvas.drawingBuffer,
 video.drawingBuffer {
-  width: 325px;
-  height: 300px;
+  width: 640px;
+  height: 480px;
 }

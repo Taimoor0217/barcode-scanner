@@ -1,7 +1,7 @@
 import Axios from "axios";
 class Ean {
   constructor() {
-    this.url = "http://localhost:5000/api";
+    this.url = "https://scancbarcode.herokuapp.com/api";
   }
   sendToken(code) {
     return new Promise((resolve, reject) => {
