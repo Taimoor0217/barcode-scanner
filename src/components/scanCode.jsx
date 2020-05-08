@@ -12,7 +12,7 @@ export default function Landing() {
   const [isSaving, setSaving] = useState(false);
   const [status , setStatus] = useState(false); //completed processing?
   const onDetected = result => {
-    setResult(result.codeResult.result);
+    setResult(result);
   };
   
   function sendToken(){
@@ -59,10 +59,10 @@ export default function Landing() {
   }
   return (
     <>
-    <Segment >
       <div className="container">
         {camera && <Scanner onDetected={onDetected} />}
       </div>
+    <Segment >
 
       <h3> Scanned Code : <span style={{color:"green"}}> {result} </span></h3>      
       <Button inverted color= "blue" onClick={() => sendToken()}>

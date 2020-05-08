@@ -1,8 +1,4 @@
-.container {
-  position: relative;
-}
 
-.container,
 #interactive.viewport {
   width: 640px;
   height: 480px;
@@ -12,7 +8,7 @@
 video {
   width: 640px;
   height: 480px;
-  position: absolute;
+  /* position: absolute; */
   top: 0;
   left: 0;
 }
