@@ -6,7 +6,6 @@
   flex-direction: column;
   align-self: start;
   flex: 0.5;
-  min-width: 350px;
 }
 .holder{
   margin: 18px;

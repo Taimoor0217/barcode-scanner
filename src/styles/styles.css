@@ -1,20 +1,50 @@
+/* .container {
+  position: relative;
+}
 
+.container,
 #interactive.viewport {
-  width: 640px;
-  height: 480px;
+  width: 400px;
+  height: 300px;
 }
 
 #interactive.viewport canvas,
 video {
-  width: 640px;
-  height: 480px;
-  /* position: absolute; */
+  width: 330px;
+  height: 300px;
+  position: absolute;
   top: 0;
   left: 0;
 }
 
 #interactive.viewport canvas.drawingBuffer,
 video.drawingBuffer {
-  width: 640px;
-  height: 480px;
+  width: 325px;
+  height: 300px;
+} */
+
+.container {
+  position: relative;
+}
+
+.container,
+#interactive.viewport {
+  min-height: 480px;
+}
+
+#interactive.viewport canvas,
+video {
+  top: 0;
+  left: 0;
+}
+
+#interactive.viewport canvas.drawingBuffer,
+video.drawingBuffer {
+  position: absolute;
+}
+
+
+#interactive.viewport > canvas, #interactive.viewport > video{
+  max-width: 100%;
+  width: 100%;
 }
