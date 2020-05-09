@@ -19,12 +19,16 @@ export default function Landing() {
     Api.sendToken(result)
     .then(res=>{
       // console.log(res.data)
-      setMessage("Sucessfully Saved to Database")
+      setMessage(`Sucessfully Saved to Database with values name: ${res.data.name} , category: ${res.data.ean}`)
       setStatus(true)
     })
     .catch(err=>{
       // console.log(err.message)
-      setMessage(err.response.data)
+      if(err.response){
+        setMessage(err.response.data)
+      }else{
+        setMessage("Something went wrong")
+      }
       setStatus(true)
     })
     setSaving(true)
