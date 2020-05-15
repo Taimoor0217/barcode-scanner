@@ -7,7 +7,7 @@ import Api from '../utils/api';
 export default function Landing() {
   let history = useHistory();
   const [camera, setCamera] = useState(true);
-  const [result, setResult] = useState(5707119032506);
+  const [result, setResult] = useState();
   const [message , setMessage] = useState("Hello World")
   const [isSaving, setSaving] = useState(false);
   const [status , setStatus] = useState(false); //completed processing?
@@ -19,7 +19,7 @@ export default function Landing() {
     Api.sendToken(result)
     .then(res=>{
       // console.log(res.data)
-      setMessage(`Sucessfully Saved to Database with values name: ${res.data.name} , category: ${res.data.ean}`)
+      setMessage(`Sucessfully Saved to Database with values\n { name: ${res.data.name} , ean: ${res.data.ean} }`)
       setStatus(true)
     })
     .catch(err=>{
@@ -40,7 +40,7 @@ export default function Landing() {
     if (status){
       return(
         <Segment>
-          <h2> {message}</h2>
+          <h3> {message}</h3>
             <div className="button-button">
                 <Button onClick={()=>{
                   // history.push('/scan')
@@ -56,7 +56,7 @@ export default function Landing() {
     }else{
       return(
         <Segment>
-          <h2>  {message} </h2>
+          <h3>  {message} </h3>
         </Segment>
       )
     }
